@@ -1,6 +1,6 @@
 <template>
-    <v-card class="flex flex-col w-full max-w-[450px]">
-        <v-img class="flex-1" cover :src="src"> </v-img>
+    <v-card class="flex flex-col w-full max-w-[450px] h-[450px] md:w-[400px] md:h-[400px]">
+        <v-img class="flex-1 "   :src="src"> </v-img>
 
         <v-card-title class="flex-none">{{ title }}</v-card-title>
 

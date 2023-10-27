@@ -7,13 +7,22 @@
                 <v-btn color="blue" class="sm:w-max text-white whitespace-pre"> Encomende agora </v-btn>
             </div>
         </div>
-        <div id="Service" class="flex flex-col px-2 py-5">
-            <h2 class="text-center text-h5 text-sm-h4">Serviços</h2>
+        <div id="Service" class="flex flex-col px-2 py-5 bg-[#95a3af]">
+            <h2 class="text-center text-h5 text-sm-h4 bg-slate-300 mx-4">Serviços</h2>
+            <v-btn class="w-max mt-5" variant="outlined">Ver todos...</v-btn>
 
-            <div class="flex-1 flex flex-col sm:flex-row gap-4 justify-between items-center pt-5 md:px-5">
-                <CardPatials :title="'Ornamentação'" :src="require('../assets/images/decorecoes/mesas.jpg')" />
-                <CardPatials :title="'Buquês'" :src="require('../assets/images/decorecoes/mesas.jpg')" />
-                <CardPatials :title="'Decoração'" :src="require('../assets/images/decorecoes/mesas.jpg')" />
+            <div class="flex-1 flex flex-col flex-wrap sm:flex-row gap-4 justify-center items-center pt-5 md:px-5">
+                <v-carousel v-if="showCarousel" interval="4000" cycle height="" :show-arrows="false">
+                    <v-carousel-item :cover="true" v-for="(service, i) in services" :key="i">
+                        <div class="h-max mb-[75px]"><CardPatials :alt="service.title" class="mx-auto" :title="service.title" :src="service.coverPhoto" /></div>
+                    </v-carousel-item>
+                </v-carousel>
+
+                <template v-else v-for="(service, i) in services" :key="i">
+                    <div :cover="true">
+                        <CardPatials :alt="service.title" class="mx-auto" :title="service.title" :src="service.coverPhoto" />
+                    </div>
+                </template>
             </div>
         </div>
         <div id="show">
@@ -52,7 +61,32 @@
         components: {
             CardPatials,
         },
-        data: () => ({}),
+        data: () => ({
+            services: [
+                { title: "Ornamentação", coverPhoto: require("@/assets/images/services/ornamentacao/EventosAdultos/IMG-20231021-WA0217-1697908338992.jpg") },
+
+                { title: "Buquês", coverPhoto: require("@/assets/images/services/buque/Buques/IMG-20231021-WA0133-1697911054292.jpg") },
+
+                { title: "Ornamentação em viaturas", coverPhoto: require("@/assets/images/services/ornamentacao/Viatura/IMG-20231021-WA0175.jpg") },
+
+                { title: "Convites", coverPhoto: require("@/assets/images/services/convites/IMG-20231021-WA0193.jpg") },
+
+                { title: "Quadros", coverPhoto: require("@/assets/images/services/quadros/IMG-20231021-WA0159-1697907449967.jpg") },
+            ],
+            showCarousel: true,
+        }),
+        created() {
+            this.showCarousel = window.innerWidth <= 850;
+            window.addEventListener("resize", this.handleResize);
+        },
+        methods: {
+            handleResize() {
+                this.showCarousel = window.innerWidth <= 972;
+            },
+        },
+        beforeUnmount() {
+            window.removeEventListener("resize", this.handleResize);
+        },
     };
 </script>
 <style>
@@ -60,5 +94,14 @@
         background-image: url("./../assets/images/background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .carousel-controls-bg {
+        background: #a31111;
+    }
+    #Service > div > div {
+        display: block;
+    }
+    #Service > div > div > div.v-window__container > div.v-window-item.v-window-item--active.v-carousel-item > div > div.v-responsive__content {
+        display: block;
     }
 </style>
