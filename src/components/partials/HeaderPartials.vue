@@ -96,9 +96,14 @@
 
                     <div class="pl-5">
                         <template v-for="(service, i) in services" :key="i">
-                            <v-list-group :value="service[i]">
+                            <v-list-group mandatory color="primary" :value="service[i]">
                                 <template #activator="{ props }">
                                     <v-list-item :title="service.title" v-bind="props"> </v-list-item>
+                                </template>
+                                <template v-for="(type, d) in service.types" :key="d">
+                                    <v-list class="pl-20">
+                                        <v-list-item :to="type.link" :title="type.name"> </v-list-item>
+                                    </v-list>
                                 </template>
                             </v-list-group>
                         </template>
