@@ -1,7 +1,7 @@
 <template>
     <v-app>
-        <HeaderPartials :services="servicesRoutes"/>
-        <router-view />
+        <HeaderPartials :services="servicesRoutes" />
+        <router-view :services="servicesRoutes" />
         <FooterPartials />
     </v-app>
 </template>
@@ -34,22 +34,27 @@
                 servicesRoutes: [
                     {
                         title: "Arrajos",
+                        selectedTab: "Type 1",
                         types: [
                             {
                                 name: "Simples",
-                                link: "/simples",
+                                link: { name: "simples" },
+                                selectedTab: "type 1",
                             },
                             {
                                 name: "Em caixa",
-                                link: "/caixa",
+                                link: { name: "caixa" },
+                                selectedTab: "type 2",
                             },
                             {
                                 name: "Com dinheiro",
-                                link: "/dinheiro",
+                                link: { name: "dinheiro" },
+                                selectedTab: "type 3",
                             },
                             {
                                 name: "Balões",
-                                link: "/baloes",
+                                link: { name: "baloes" },
+                                selectedTab: "type 4",
                             },
                         ],
                     },
@@ -58,11 +63,13 @@
                         types: [
                             {
                                 name: "Para damas",
-                                link: "/damas",
+                                link: { name: "damas" },
+                                selectedTab: "type 5",
                             },
                             {
                                 name: "Para Noivas",
-                                link: "/noivas",
+                                link: { name: "noivas" },
+                                selectedTab: "type 6",
                             },
                         ],
                     },
@@ -71,27 +78,40 @@
                         types: [
                             {
                                 name: "Eventos para crianças",
-                                link: "/eventos-criancas",
+                                link: { name: "eventos-criancas" },
+                                selectedTab: "type 7",
                             },
                             {
                                 name: "Eventos papa adultos",
-                                link: "/eventos-adultos",
+                                link: { name: "eventos-adultos" },
+                                selectedTab: "type 8",
                             },
                             {
                                 name: "Viaturas",
-                                link: "/viaturas",
+                                link: { name: "viaturas" },
+                                selectedTab: "type 9",
                             },
                         ],
                     },
                     {
                         title: "Quadros",
-                        link: "/quadros",
-                        types: [],
+                        types: [
+                            {
+                                name: "Quadros",
+                                link: { name: "quadros" },
+                                selectedTab: "type 10",
+                            },
+                        ],
                     },
                     {
                         title: "Convites",
-                        link: "/convites",
-                        types: [],
+                        types: [
+                            {
+                                name: "Convites",
+                                link: { name: "convites" },
+                                selectedTab: "type 11",
+                            },
+                        ],
                     },
                 ],
             };

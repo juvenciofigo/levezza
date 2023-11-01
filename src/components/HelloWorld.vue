@@ -9,7 +9,7 @@
         </div>
         <div id="Service" class="flex flex-col px-2 py-5 bg-[#95a3af]">
             <h2 class="text-center text-h5 text-sm-h4 bg-slate-300 mx-4">Serviços</h2>
-            <v-btn class="w-max mt-5" variant="outlined">Ver todos...</v-btn>
+            <v-btn class="w-max mt-5" to="/services" variant="outlined">Ver todos...</v-btn>
 
             <div class="flex-1 flex flex-col flex-wrap sm:flex-row gap-4 justify-center items-center pt-5 md:px-5">
                 <v-carousel v-if="showCarousel" interval="4000" cycle height="" :show-arrows="false">
@@ -56,6 +56,7 @@
 
 <script>
     import CardPatials from "@/components/partials/CardPartials.vue";
+    
     export default {
         name: "HelloWorld",
         components: {

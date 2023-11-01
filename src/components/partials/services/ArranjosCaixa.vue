@@ -1,5 +1,7 @@
 <template>
-    <div></div>
+    <div>
+        caixa
+    </div>
 </template>
 <script>
     export default {};

@@ -21,7 +21,7 @@
                                 <v-list-subheader prepend-avatar="d" title="Levezza" />
                                 <div class="pl-5">
                                     <template v-for="(service, i) in services" :key="i">
-                                        <v-list-group v-if="service.types.length > 0" :value="service[i]">
+                                        <v-list-group :value="service[i]">
                                             <template #activator="{ props }">
                                                 <v-list-item color="primary" :title="service.title" v-bind="props" />
                                             </template>
@@ -29,22 +29,24 @@
                                                 <v-list-item variant="plain" :to="type.link" :title="type.name" />
                                             </template>
                                         </v-list-group>
-                                        <template v-else>
-                                            <v-list-item to="" :title="service.title" />
-                                        </template>
                                     </template>
                                 </div>
                             </v-list>
                         </v-menu> -->
 
-                        <v-menu min-width="250" open-delay="50" class="custom-menu" flat height=""  eager scrim="primary" location="end" open-on-hover>
+                        <v-menu min-width="250" open-delay="50" class="custom-menu" flat height="" eager scrim="primary" location="end" open-on-hover>
                             <template v-slot:activator="{ props }">
-                                <div v-bind="props" class=" hover:-translate-y-1"><span>Serviços</span><v-icon>mdi-chevron-down</v-icon></div>
+                                <div v-bind="props" class="hover:-translate-y-1"><span>Serviços</span><v-icon>mdi-chevron-down</v-icon></div>
                             </template>
+                            <v-list>
+                                <v-list-item>
+                                    <v-btn to="/services">Ver todos</v-btn>
+                                </v-list-item>
+                            </v-list>
                             <template v-for="(service, i) in services" :key="i">
                                 <v-list>
                                     <v-list-item>
-                                        <v-menu  open-delay="50" transition="scale-transition" min-width="250"  height="" v-if="service.types.length > 0" location="end" open-on-hover>
+                                        <v-menu open-delay="50" transition="scale-transition" min-width="250" height="" location="end" open-on-hover>
                                             <template v-slot:activator="{ props }">
                                                 <div v-bind="props" class="hover:-translate-y-1 h-full w-full flex flex-row justify-between">
                                                     <span>{{ service.title }}</span
@@ -57,9 +59,6 @@
                                                 </v-list>
                                             </template>
                                         </v-menu>
-                                        <template v-else>
-                                            <v-list-item :to="service.link" :title="service.title" />
-                                        </template>
                                     </v-list-item>
                                 </v-list>
                             </template>
@@ -97,18 +96,11 @@
 
                     <div class="pl-5">
                         <template v-for="(service, i) in services" :key="i">
-                            <v-list-group v-if="service.types.length > 0" :value="service[i]">
+                            <v-list-group :value="service[i]">
                                 <template #activator="{ props }">
                                     <v-list-item :title="service.title" v-bind="props"> </v-list-item>
                                 </template>
-                                <template v-for="(type, d) in service.types" :key="d">
-                                    <v-list-item :to="type.link" :title="type.name"></v-list-item>
-                                </template>
                             </v-list-group>
-
-                            <template v-else>
-                                <v-list-item :title="service.title"> </v-list-item>
-                            </template>
                         </template>
                     </div>
                 </v-list-group>
@@ -137,9 +129,10 @@
         },
     };
 </script>
-<style >
-.custom-menu {
-  /* Defina os estilos que você deseja aplicar */
-  background: none; /* Exemplo: remova o plano de fundo padrão */
-  /* Outras propriedades CSS personalizadas */
-}</style>
+<style>
+    .custom-menu {
+        /* Defina os estilos que você deseja aplicar */
+        background: none; /* Exemplo: remova o plano de fundo padrão */
+        /* Outras propriedades CSS personalizadas */
+    }
+</style>

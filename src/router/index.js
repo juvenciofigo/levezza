@@ -21,10 +21,96 @@ const routes = [
         path: "/services",
         component: () => import("../views/ServicesView.vue"),
         children: [
-            { path: "arranjos", component: () => import("@/components/partials/SevicesGalery.vue") },
-            { path: "buques", component: () => import("@/components/partials/SevicesGalery.vue") },
-            { path: "ornamentacao", component: () => import("@/components/partials/SevicesGalery.vue") },
-            { path: "quadros", component: () => import("@/components/partials/SevicesGalery.vue") },
+            {
+                path: "arranjos",
+                component: () => import("@/components/partials/SevicesGalery.vue"),
+                children: [
+                    {
+                        path: "simples",
+                        name: "simples",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                    {
+                        path: "caixa",
+                        name: "caixa",
+                        component: () => import("@/components/partials/services/ArranjosCaixa.vue"),
+                    },
+                    {
+                        path: "dinheiro",
+                        name: "dinheiro",
+                        component: () => import("@/components/partials/services/ArranjosDinheiro.vue"),
+                    },
+                    {
+                        path: "baloes",
+                        name: "baloes",
+                        component: () => import("@/components/partials/ArranjosBaloes.vue"),
+                    },
+                ],
+            },
+            {
+                path: "buques",
+                component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                children: [
+                    {
+                        path: "damas",
+                        name: "damas",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                    {
+                        path: "noivas",
+                        name: "noivas",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                ],
+            },
+            {
+                path: "ornamentacao",
+                component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                children: [
+                    {
+                        path: "viaturas",
+                        name: "viaturas",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                    {
+                        path: "eventos-adultos",
+                        name: "eventos-adultos",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                    {
+                        path: "eventos-criancas",
+                        name: "eventos-criancas",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                ],
+            },
+            {
+                path: "quadros",
+                component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                children: [
+                    {
+                        path: "quadros",
+                        name: "quadros",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                    {
+                        path: "noivas",
+                        name: "noivas",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                ],
+            },
+            {
+                path: "convites",
+                component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                children: [
+                    {
+                        path: "convites",
+                        name: "convites",
+                        component: () => import("@/components/partials/services/ArranjosSimples.vue"),
+                    },
+                ],
+            },
         ],
     },
 ];
