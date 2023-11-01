@@ -38,22 +38,26 @@
                         types: [
                             {
                                 name: "Simples",
-                                link: { name: "simples" },
+                                // link: { name: "simples" },
+                                link: {name: "erro"},
                                 selectedTab: "type 1",
                             },
                             {
                                 name: "Em caixa",
-                                link: { name: "caixa" },
+                                // link: { name: "caixa" },
+                                link: {name: "erro"},
                                 selectedTab: "type 2",
                             },
                             {
                                 name: "Com dinheiro",
-                                link: { name: "dinheiro" },
+                                // link: { name: "dinheiro" },
+                                link: {name: "erro"},
                                 selectedTab: "type 3",
                             },
                             {
                                 name: "Balões",
-                                link: { name: "baloes" },
+                                // link: { name: "baloes" },
+                                link: {name: "erro"},
                                 selectedTab: "type 4",
                             },
                         ],
@@ -63,12 +67,14 @@
                         types: [
                             {
                                 name: "Para damas",
-                                link: { name: "damas" },
+                                // link: { name: "damas" },
+                                link: {name: "erro"},
                                 selectedTab: "type 5",
                             },
                             {
                                 name: "Para Noivas",
-                                link: { name: "noivas" },
+                                // link: { name: "noivas" },
+                                link: {name: "erro"},
                                 selectedTab: "type 6",
                             },
                         ],
@@ -78,17 +84,20 @@
                         types: [
                             {
                                 name: "Eventos para crianças",
-                                link: { name: "eventos-criancas" },
+                                // link: { name: "eventos-criancas" },
+                                link: {name: "erro"},
                                 selectedTab: "type 7",
                             },
                             {
                                 name: "Eventos papa adultos",
-                                link: { name: "eventos-adultos" },
+                                // link: { name: "eventos-adultos" },
+                                link: {name: "erro"},
                                 selectedTab: "type 8",
                             },
                             {
                                 name: "Viaturas",
-                                link: { name: "viaturas" },
+                                // link: { name: "viaturas" },
+                                link: {name: "erro"},
                                 selectedTab: "type 9",
                             },
                         ],
@@ -98,7 +107,8 @@
                         types: [
                             {
                                 name: "Quadros",
-                                link: { name: "quadros" },
+                                // link: { name: "quadros" },
+                                link: {name: "erro"},
                                 selectedTab: "type 10",
                             },
                         ],
@@ -108,7 +118,8 @@
                         types: [
                             {
                                 name: "Convites",
-                                link: { name: "convites" },
+                                // link: { name: "convites" },
+                                link: {name: "erro"},
                                 selectedTab: "type 11",
                             },
                         ],

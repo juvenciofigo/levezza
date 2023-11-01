@@ -1,8 +1,8 @@
 <template lang="">
-    <CardPartials :images="images" :src="require('../../assets/images/background.jpg')" />
+    <CardPartials :images="images" :src="require('../../../assets/images/background.jpg')" />
 </template>
 <script>
-    import CardPartials from "./services/CardPartials.vue";
+    import CardPartials from "./../services/CardPartials.vue";
     export default {
         components: {
             CardPartials,
